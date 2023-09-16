@@ -13,8 +13,9 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
-        childAspectRatio: 3 / 2, // 200 width, 300 height
+        maxCrossAxisExtent: 200, //defines the width of the grid item
+        childAspectRatio: 3 /
+            2, // 200 width, 300 height // defines how the items should be sized with respect to height and width relation
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),
