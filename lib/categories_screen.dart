@@ -16,6 +16,7 @@ class CategoriesScreen extends StatelessWidget {
         title: const Text('Food Heart'),
       ),
       body: GridView(
+        padding: const EdgeInsets.all(25),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200, //defines the width of the grid item
           childAspectRatio: 3 /
