@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:food_heart/categories_screen.dart';
+
+import 'models/category.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final List<CategoryModel> _category = [];
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: CategoriesScreen(category: _category),
     );
   }
 }
@@ -22,6 +32,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
