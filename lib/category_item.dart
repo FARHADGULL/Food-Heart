@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_heart/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color color;
 
@@ -9,6 +10,7 @@ class CategoryItem extends StatelessWidget {
     super.key,
     required this.title,
     required this.color,
+    required this.id,
   });
 
   @override
@@ -19,7 +21,10 @@ class CategoryItem extends StatelessWidget {
       onTap: () => Navigator.of(context).push(
         MaterialPageRoute(
           builder: (_) {
-            return CategoryMealsScreen();
+            return CategoryMealsScreen(
+              categoryTitle: title,
+              categoryId: id,
+            );
           },
         ),
       ),
