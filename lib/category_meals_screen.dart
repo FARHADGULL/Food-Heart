@@ -14,12 +14,15 @@ class CategoryMealsScreen extends StatelessWidget {
     final routeArgs =
         ModalRoute.of(context)?.settings.arguments as Map<String, String>;
     final categoryTitle = routeArgs['title'];
+    final categoryId = routeArgs['id'];
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle!),
       ),
-      body: const Center(
-        child: Text('The Recipes For The Category!'),
+      body: ListView.builder(
+        itemBuilder: ((context, index) {
+          return;
+        }),
       ),
     );
   }

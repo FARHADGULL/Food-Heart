@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (context) => const CategoriesScreen(),
-        CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
+        CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
       },
     );
   }
