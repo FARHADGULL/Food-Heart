@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_heart/categories_screen.dart';
+import 'package:food_heart/category_meals_screen.dart';
 
 import 'models/category.dart';
 
@@ -40,28 +41,9 @@ class _MyAppState extends State<MyApp> {
             ),
       ),
       home: CategoriesScreen(category: _category),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  // ignore: library_private_types_in_public_api
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('DeliMeals'),
-      ),
-      body: const Center(
-        child: Text('Navigation Time!'),
-      ),
+      routes: {
+        '/category_meals': (context) => CategoryMealsScreen(),
+      },
     );
   }
 }

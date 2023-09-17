@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_heart/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -18,16 +17,23 @@ class CategoryItem extends StatelessWidget {
     return InkWell(
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
-      onTap: () => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) {
-            return CategoryMealsScreen(
-              categoryTitle: title,
-              categoryId: id,
-            );
-          },
-        ),
+      onTap: () => Navigator.of(context).pushNamed(
+        '/category_meals',
+        arguments: {
+          'id': id,
+          'title': title,
+        },
       ),
+      // onTap: () => Navigator.of(context).push(
+      //   MaterialPageRoute(
+      //     builder: (_) {
+      //       return CategoryMealsScreen(
+      //         categoryTitle: title,
+      //         categoryId: id,
+      //       );
+      //     },
+      //   ),
+      // ),
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
