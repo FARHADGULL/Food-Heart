@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_heart/category_item.dart';
-import 'package:food_heart/dummy_data.dart';
-
-import 'models/category.dart';
+import './category_item.dart';
+import './dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  final List<CategoryModel> category;
-
-  const CategoriesScreen({super.key, required this.category});
+  const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

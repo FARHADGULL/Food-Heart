@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_heart/categories_screen.dart';
-import 'package:food_heart/category_meals_screen.dart';
-
-import 'models/category.dart';
+import './categories_screen.dart';
+import './category_meals_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,8 +12,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final List<CategoryModel> _category = [];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,9 +36,11 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
       ),
-      home: CategoriesScreen(category: _category),
+      //home: CategoriesScreen(),
+      initialRoute: '/',
       routes: {
-        '/category_meals': (context) => CategoryMealsScreen(),
+        '/': (context) => const CategoriesScreen(),
+        CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
       },
     );
   }
