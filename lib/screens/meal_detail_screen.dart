@@ -13,6 +13,9 @@ class MealDetailScreen extends StatelessWidget {
     );
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(selectedItem.title),
+      ),
       body: Column(
         children: [
           Container(
@@ -31,12 +34,27 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ),
           Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: Colors.grey,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             height: 200,
             width: 300,
             child: ListView.builder(
               itemBuilder: (ctx, index) => Card(
                 color: Theme.of(context).hintColor,
-                child: Text(selectedItem.ingredients[index]),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 5,
+                    horizontal: 10,
+                  ),
+                  child: Text(selectedItem.ingredients[index]),
+                ),
               ),
               itemCount: selectedItem.ingredients.length,
             ),
