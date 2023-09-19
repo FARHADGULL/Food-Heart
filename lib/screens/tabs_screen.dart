@@ -30,7 +30,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: const Text('Food Heart'),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
