@@ -17,7 +17,7 @@ class MainDrawer extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      onTap: null,
+      onTap: () {},
     );
   }
 
@@ -40,6 +40,8 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
+          buildListTile('Meals', Icons.restaurant),
+          buildListTile('Filters', Icons.settings),
         ],
       ),
     );
