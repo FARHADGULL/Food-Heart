@@ -34,6 +34,12 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Filters'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.save),
+          ),
+        ],
       ),
       drawer: const MainDrawer(),
       body: Column(

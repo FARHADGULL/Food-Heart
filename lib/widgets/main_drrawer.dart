@@ -38,6 +38,7 @@ class MainDrawer extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
+                color: Colors.white,
               ),
             ),
           ),
