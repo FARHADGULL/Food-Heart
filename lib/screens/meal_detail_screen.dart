@@ -94,7 +94,7 @@ class MealDetailScreen extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).pop(mealId);
         },
-        child: Icon(
+        child: const Icon(
           Icons.delete,
         ),
       ),
