@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_heart/screens/filter_screen.dart';
 import './screens/meal_detail_screen.dart';
 import './screens/tabs_screen.dart';
 import 'screens/category_meals_screen.dart';
@@ -43,6 +44,7 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => const TabsScreen(),
         CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
         MealDetailScreen.routeName: (context) => const MealDetailScreen(),
+        FiltersScreen.routeName: (context) => const FiltersScreen(),
       },
     );
   }
