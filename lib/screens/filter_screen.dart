@@ -5,7 +5,9 @@ class FiltersScreen extends StatefulWidget {
   static const routeName = 'filters-screen';
 
   final Function setFilterHandler;
-  const FiltersScreen({super.key, required this.setFilterHandler});
+  final Map<String, bool> filters;
+  const FiltersScreen(
+      {super.key, required this.setFilterHandler, required this.filters});
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
