@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_heart/dummy_data.dart';
+import 'package:food_heart/screens/favorites_screen.dart';
 import 'package:food_heart/screens/filter_screen.dart';
 import './screens/meal_detail_screen.dart';
 import './screens/tabs_screen.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   List<Meal> _availableMeals = DUMMY_MEALS;
+  List<Meal> _favoriteMeals = [];
 
   Map<String, bool> _filters = {
     'gluten-free': false,
@@ -79,8 +81,9 @@ class _MyAppState extends State<MyApp> {
             CategoryMealsScreen(availableMeals: _availableMeals),
         MealDetailScreen.routeName: (context) => const MealDetailScreen(),
         FiltersScreen.routeName: (context) => FiltersScreen(
-              setFilterHandler: _setFilter,
-              currentfilters: _filters,
+            setFilterHandler: _setFilter, currentfilters: _filters),
+        FavoritesScreen.routeName: (context) => FavoritesScreen(
+              favMeals: _favoriteMeals,
             ),
       },
     );
