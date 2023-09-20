@@ -100,6 +100,7 @@ class _MyAppState extends State<MyApp> {
             ),
         MealDetailScreen.routeName: (context) => MealDetailScreen(
               setFavoriteHandler: _setFavorite,
+              isFavorite: _isFavorite,
             ),
         FiltersScreen.routeName: (context) => FiltersScreen(
             setFilterHandler: _setFilter, currentfilters: _filters),
