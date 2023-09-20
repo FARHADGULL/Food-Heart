@@ -14,6 +14,19 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Map<String, bool> _filters = {
+    'gluten-free': false,
+    'lactose-free': false,
+    'vegan': false,
+    'vegetarian': false,
+  };
+
+  void _setFilter(Map<String, bool> filterData) {
+    setState(() {
+      _filters = filterData;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +57,9 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => const TabsScreen(),
         CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
         MealDetailScreen.routeName: (context) => const MealDetailScreen(),
-        FiltersScreen.routeName: (context) => const FiltersScreen(),
+        FiltersScreen.routeName: (context) => FiltersScreen(
+              setFilterHandler: _setFilter,
+            ),
       },
     );
   }

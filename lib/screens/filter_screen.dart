@@ -3,7 +3,9 @@ import 'package:food_heart/widgets/main_drrawer.dart';
 
 class FiltersScreen extends StatefulWidget {
   static const routeName = 'filters-screen';
-  const FiltersScreen({super.key});
+
+  final Function setFilterHandler;
+  const FiltersScreen({super.key, required this.setFilterHandler});
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
@@ -36,7 +38,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
         title: const Text('Your Filters'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              final selectedFilters = {
+                'gluten-free': _isGlutenFree,
+                'lactose-free': _isLactoseFree,
+                'vegan': _isVegan,
+                'vegetarian': _isVegetarian,
+              };
+              widget.setFilterHandler(selectedFilters);
+            },
             icon: const Icon(Icons.save),
           ),
         ],
