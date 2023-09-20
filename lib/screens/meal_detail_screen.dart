@@ -3,7 +3,9 @@ import 'package:food_heart/dummy_data.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal_detail';
-  const MealDetailScreen({super.key});
+
+  final Function setFavoriteHandler;
+  const MealDetailScreen({super.key, required this.setFavoriteHandler});
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
@@ -46,13 +48,28 @@ class MealDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 300,
-              width: double.infinity,
-              child: Image.network(
-                selectedItem.imageUrl,
-                fit: BoxFit.cover,
-              ),
+            Stack(
+              children: [
+                Container(
+                  height: 300,
+                  width: double.infinity,
+                  child: Image.network(
+                    selectedItem.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  top: 10,
+                  right: 10,
+                  child: IconButton(
+                    onPressed: () => setFavoriteHandler(mealId),
+                    icon: const Icon(
+                      Icons.favorite_border,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+              ],
             ),
             buildSectionTitle(context, 'Ingrediants'),
             buildContainer(

@@ -5,9 +5,10 @@ import '../widgets/meal_item.dart';
 
 class FavoritesScreen extends StatelessWidget {
   final List<Meal> favMeals;
-  final Function setFavoriteHandler;
-  const FavoritesScreen(
-      {Key? key, required this.favMeals, required this.setFavoriteHandler});
+  const FavoritesScreen({
+    Key? key,
+    required this.favMeals,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,6 @@ class FavoritesScreen extends StatelessWidget {
             complexity: favMeals.elementAt(index).complexity,
             affordability: favMeals.elementAt(index).affordability,
             id: favMeals.elementAt(index).id,
-            setFavoriteHandler: setFavoriteHandler,
           );
         }),
         itemCount: favMeals.length,

@@ -6,9 +6,7 @@ import '../models/meal.dart';
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category_meals';
   final List<Meal> availableMeals;
-  final Function setFavHandler;
-  const CategoryMealsScreen(
-      {super.key, required this.availableMeals, required this.setFavHandler});
+  const CategoryMealsScreen({super.key, required this.availableMeals});
 
   @override
   State<CategoryMealsScreen> createState() => _CategoryMealsScreenState();
@@ -52,7 +50,6 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
             complexity: categoryMeal.elementAt(index).complexity,
             affordability: categoryMeal.elementAt(index).affordability,
             id: categoryMeal.elementAt(index).id,
-            setFavoriteHandler: widget.setFavHandler,
           );
         }),
         itemCount: categoryMeal.length,

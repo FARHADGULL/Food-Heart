@@ -94,12 +94,13 @@ class _MyAppState extends State<MyApp> {
       //home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
-        '/': (context) => TabsScreen(_favoriteMeals, _setFavorite),
+        '/': (context) => TabsScreen(_favoriteMeals),
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(
               availableMeals: _availableMeals,
-              setFavHandler: _setFavorite,
             ),
-        MealDetailScreen.routeName: (context) => const MealDetailScreen(),
+        MealDetailScreen.routeName: (context) => MealDetailScreen(
+              setFavoriteHandler: _setFavorite,
+            ),
         FiltersScreen.routeName: (context) => FiltersScreen(
             setFilterHandler: _setFilter, currentfilters: _filters),
       },

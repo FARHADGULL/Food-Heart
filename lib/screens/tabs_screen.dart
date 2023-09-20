@@ -7,8 +7,9 @@ import '../widgets/main_drrawer.dart';
 
 class TabsScreen extends StatefulWidget {
   final List<Meal> _favMeals;
-  final Function _setfavHandler;
-  const TabsScreen(this._favMeals, this._setfavHandler);
+  const TabsScreen(
+    this._favMeals,
+  );
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -24,7 +25,6 @@ class _TabsScreenState extends State<TabsScreen> {
       const CategoriesScreen(),
       FavoritesScreen(
         favMeals: widget._favMeals,
-        setFavoriteHandler: widget._setfavHandler,
       ),
     ];
     super.initState();

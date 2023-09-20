@@ -10,7 +10,6 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
-  final Function setFavoriteHandler;
 
   const MealItem({
     super.key,
@@ -20,7 +19,6 @@ class MealItem extends StatelessWidget {
     required this.complexity,
     required this.affordability,
     required this.id,
-    required this.setFavoriteHandler,
   });
 
   String get complexityText {
@@ -112,17 +110,17 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
                 //fav icon
-                Positioned(
-                  top: 10,
-                  right: 10,
-                  child: IconButton(
-                    onPressed: () => setFavoriteHandler(id),
-                    icon: const Icon(
-                      Icons.favorite_border,
-                      color: Colors.red,
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   top: 10,
+                //   right: 10,
+                //   child: IconButton(
+                //     onPressed: () => setFavoriteHandler(id),
+                //     icon: const Icon(
+                //       Icons.favorite_border,
+                //       color: Colors.red,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
             Padding(
