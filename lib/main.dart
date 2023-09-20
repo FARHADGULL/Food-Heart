@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
         MealDetailScreen.routeName: (context) => const MealDetailScreen(),
         FiltersScreen.routeName: (context) => FiltersScreen(
               setFilterHandler: _setFilter,
-              filters: _filters,
+              currentfilters: _filters,
             ),
       },
     );
