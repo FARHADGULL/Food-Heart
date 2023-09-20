@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_heart/dummy_data.dart';
-import 'package:food_heart/screens/favorites_screen.dart';
 import 'package:food_heart/screens/filter_screen.dart';
 import './screens/meal_detail_screen.dart';
 import './screens/tabs_screen.dart';
@@ -76,15 +75,14 @@ class _MyAppState extends State<MyApp> {
       //home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
-        '/': (context) => const TabsScreen(),
+        '/': (context) => TabsScreen(
+              favMeals: _favoriteMeals,
+            ),
         CategoryMealsScreen.routeName: (context) =>
             CategoryMealsScreen(availableMeals: _availableMeals),
         MealDetailScreen.routeName: (context) => const MealDetailScreen(),
         FiltersScreen.routeName: (context) => FiltersScreen(
             setFilterHandler: _setFilter, currentfilters: _filters),
-        FavoritesScreen.routeName: (context) => FavoritesScreen(
-              favMeals: _favoriteMeals,
-            ),
       },
     );
   }
