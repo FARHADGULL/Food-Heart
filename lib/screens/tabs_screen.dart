@@ -6,8 +6,9 @@ import '../models/meal.dart';
 import '../widgets/main_drrawer.dart';
 
 class TabsScreen extends StatefulWidget {
-  final List<Meal> favMeals;
-  const TabsScreen({super.key, required this.favMeals});
+  final List<Meal> _favMeals;
+  final Function _setfavHandler;
+  const TabsScreen(this._favMeals, this._setfavHandler);
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -21,7 +22,10 @@ class _TabsScreenState extends State<TabsScreen> {
   void initState() {
     _pages = [
       const CategoriesScreen(),
-      FavoritesScreen(widget.favMeals),
+      FavoritesScreen(
+        favMeals: widget._favMeals,
+        setFavoriteHandler: widget._setfavHandler,
+      ),
     ];
     super.initState();
   }
