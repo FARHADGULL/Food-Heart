@@ -15,10 +15,16 @@ class TabsScreen extends StatefulWidget {
 
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedIndex = 0;
-  final List<Widget> _pages = [
-    const CategoriesScreen(),
-    const FavoritesScreen(),
-  ];
+  List<Widget> _pages = [];
+
+  @override
+  void initState() {
+    _pages = [
+      const CategoriesScreen(),
+      FavoritesScreen(widget.favMeals),
+    ];
+    super.initState();
+  }
 
   void _selectPage(int index) {
     setState(() {

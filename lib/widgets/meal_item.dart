@@ -117,8 +117,9 @@ class MealItem extends StatelessWidget {
                   right: 10,
                   child: IconButton(
                     onPressed: () {
-                      //value = !value;
-                      //print(value);
+                      // setState((value) {
+                      //   favMeal = !value;
+                      // });
                     },
                     icon: const Icon(
                       Icons.favorite,

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class FavoritesScreen extends StatefulWidget {
-  static const routeName = 'favorite-screen';
+import '../models/meal.dart';
 
-  const FavoritesScreen({
-    super.key,
-  });
+class FavoritesScreen extends StatefulWidget {
+  final List<Meal> favMeals;
+  const FavoritesScreen(this.favMeals, {Key? key});
 
   @override
   State<FavoritesScreen> createState() => _FavoritesScreenState();
@@ -14,7 +13,6 @@ class FavoritesScreen extends StatefulWidget {
 class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
-    bool isFav = false;
     return Center(
       child: Text('You have no favorites yet - start adding some!'),
     );
